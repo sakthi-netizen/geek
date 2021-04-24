@@ -1,0 +1,19 @@
+vector <int> preorder(Node* root)
+{
+    stack<Node*> s;
+    vector<int> res;
+    
+    s.push(root);
+
+    while(!s.empty())
+    {
+        Node* cur = s.top();
+        res.push_back(cur->data);
+        s.pop();
+            
+        if(cur->right) s.push(cur->right);
+        if(cur->left) s.push(cur->left);
+    }
+
+    return res;
+}
