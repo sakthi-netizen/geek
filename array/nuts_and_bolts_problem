@@ -1,0 +1,22 @@
+void matchPairs(char nuts[], char bolts[], int n) {
+	    char order[] = {'!', '#', '$', '%', '&', '*', '@', '^', '~'};
+	    int k=0, l=0;
+	    
+	    for(int i=0; i<9; i++){
+	        for(int j=0; j<n; j++){
+	            if(order[i] == nuts[j]){
+	                int temp = nuts[k];
+    	            nuts[k] = nuts[j];
+    	            nuts[j] = temp;
+    	            k++;
+	            }
+	            
+	            if(order[i] == bolts[j]){
+	                int temp = bolts[l];
+    	            bolts[l] = bolts[j];
+    	            bolts[j] = temp;
+    	            l++;
+	            }
+	        }
+	    }
+	}
